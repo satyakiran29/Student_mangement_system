@@ -1,0 +1,36 @@
+/* Full page background image */
+body {
+    background-image: url('/images/Facilities-1-block1.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  
+  /* Optional: Add a slight overlay effect for better readability */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
+    z-index: -1;
+    backdrop-filter: blur(10px); /* Add blur effect */
+  }
+  
+  /* Card styling */
+  .card {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95); /* slightly transparent white */
+  }
+  
+  /* Submit button style */
+  button[type="submit"] {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
