@@ -1,19 +1,8 @@
 <?php
 // Start session
 session_start();
-
-// Database connection
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "student_mangement";
-
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+// Include database connection
+include 'db.php';
 // Handle login
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -33,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirect based on role
         if ($user['role'] == 'admin') {
-            header("Location: admin_dashboard.php");
+            header("Location: superadmin.php");
         } elseif ($user['role'] == 'student') {
-            header("Location: student.php");
+            header("Location: result.php");
         } else {
             header("Location: dashboard.php");
         }
@@ -61,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Student Management</a>
+    <a class="navbar-brand" href="#">Student Result Management</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -69,21 +58,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="/Student_mangement_system/index.html">Home</a>
+          <a class="nav-link active" href="home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Results</a>
+          <a class="nav-link" href="/Student_mangement_system/db/student.php">Results</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Student Login</a>
+          <a class="nav-link" href="#">Attendance</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About us</a>
+          <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
 
 <!-- Login Form -->
 <div class="container mt-5">
@@ -107,6 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 </div>
+
 
 <!-- Bootstrap JS (for navbar toggle) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
