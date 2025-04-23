@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.container {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+h2 {
+    background-color: #2f4f81;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 0;
+}
+ol {
+    padding-left: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #000;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+.section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.formula {
+    text-align: center;
+    margin: 20px 0;
+}
+h1 {
+    margin-bottom: 20px;
+}
+form {
+    margin-bottom: 20px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.filter-label {
+    margin-right: 10px;
+}
+.filter-input {
+    margin-right: 20px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    h2 {
+        font-size: 18px;
+        padding: 8px;
+    }
+    table {
+        font-size: 12px;
+    }
+    th, td {
+        padding: 6px;
+        text-align: left;
+    }
+    .section-title {
+        font-size: 16px;
+    }
+    .formula {
+        margin: 10px 0;
+    }
+    form {
+        font-size: 14px;
+    }
+}
